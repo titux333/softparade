@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Administración | softparade cells</title><meta name="robots" content="noindex"><link rel="stylesheet" href="css/style.css"></head><body>
+<header class="hd"><div class="wrap hd__in"><a href="index.html"><img src="img/logo.svg" alt="softparade cells" class="logo"></a><button id="out" class="btn btn--g" hidden>Salir</button></div></header>
+<main class="wrap sec">
+<section id="login"><h2>Administración</h2><form id="fLog" class="form"><label>Email <input type="email" name="email" required></label>
+<label>Contraseña <input type="password" name="pass" required></label><button class="btn">Ingresar</button><p id="logMsg" class="msg"></p></form></section>
+<section id="panel" hidden>
+  <div class="tabs"><button class="btn" data-t="pedidos">Pedidos</button><button class="btn btn--g" data-t="productos">Productos</button><button class="btn btn--g" data-t="reparaciones">Reparaciones</button></div>
+  <div id="pedidos" class="tbl"></div>
+  <div id="productos" hidden>
+    <form id="fProd" class="form"><h3>Agregar producto</h3>
+      <label>Nombre <input name="nombre" required></label>
+      <label>Categoría <select name="categoria"><option value="celular">Celular</option><option value="accesorio">Accesorio</option></select></label>
+      <label>Precio (ARS) <input type="number" name="precio" min="0" required></label>
+      <label>Stock <input type="number" name="stock" min="0" value="1" required></label>
+      <label>Características (una por línea) <textarea name="caracteristicas" rows="4"></textarea></label>
+      <label>Foto <input type="file" name="foto" accept="image/*"></label>
+      <button class="btn">Guardar producto</button><p id="prodMsg" class="msg"></p></form>
+    <h3>Productos cargados</h3><div id="listaProd"></div>
+  </div>
+  <div id="reparaciones" class="tbl" hidden></div>
+</section></main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="js/config.js"></script><script src="js/admin.js"></script></body></html>
